@@ -3,7 +3,6 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const { connectMongoDB } = require("./config/db");
-const organizationBranchRoute = require("./routes/OrganizationBranch.js");
 const orgRouter = require("./routes/organization.js");
 const colorRoute = require("./routes/color.js");
 const deviceRoute = require("./routes/device.js");
@@ -22,6 +21,7 @@ const profitLossRouter = require("./routes/profitLoss.js");
 const activityLogRouter = require("./routes/activityLog.js");
 
 const deviceProxy = require("./routes/deviceImage"); // adjust path as needed
+const organizationBranchRoute = require("./routes/OrganizationBranch.js");
 
 const PORT = process.env.PORT;
 connectMongoDB();
