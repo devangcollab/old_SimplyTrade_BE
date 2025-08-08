@@ -1,4 +1,4 @@
-const ActivityLog = require("../models/ActivityLog");
+const ActivityLog = require("../models/activityLog")
 const { findUserServices } = require("../services/user");
 
 exports.createLogActivity = async (req, res) => {
