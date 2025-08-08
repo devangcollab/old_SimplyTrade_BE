@@ -21,7 +21,7 @@ const profitLossRouter = require("./routes/profitLoss.js");
 const activityLogRouter = require("./routes/activityLog.js");
 
 const deviceProxy = require("./routes/deviceImage"); // adjust path as needed
-const organizationBranchRoute = require("./routes/OrganizationBranch.js");
+const organizationBranchRoute = require("./routes/organizationBranch.js");
 
 const PORT = process.env.PORT;
 connectMongoDB();
