@@ -1,7 +1,9 @@
 const express =require('express')
 const {  findAllColor, updateColor, findOneColor, createColor, softDeleteColor, selectColorByDevice, searchColor, selectColor} = require('../controllers/color')
-const { validateGetOneColorData, validateCreateColorData, validateUpdateColorData, validateDeleteColorData } = require('../middleware/Color')
+ 
 const { AuthUser } = require('../middleware/user')
+const { validateGetOneColorData, validateCreateColorData, validateUpdateColorData, validateDeleteColorData } = require('../middleware/Color')
+ 
 const colorRoute=express.Router()
 
 colorRoute.get('/findAllColor',AuthUser,findAllColor)
