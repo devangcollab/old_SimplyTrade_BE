@@ -27,7 +27,17 @@ const PORT = process.env.PORT;
 connectMongoDB();
 
 app.use(express.json());
-app.use(cors());
+
+
+const corsOptions = {
+  origin: process.env.FRONT_END_URL, // Don't include /api
+  credentials: true, // If you're using cookies or auth headers
+  methods: ["GET", "POST", "PUT", "DELETE"], // Adjust as needed
+  allowedHeaders : ['Content-Type', 'Authorization']
+};
+
+
+app.use(cors(corsOptions));
 app.use(
   "/api",
   userRoute,
@@ -49,6 +59,9 @@ app.use(
   deviceProxy,
   activityLogRouter
 );
+
+
+
 
 app.get("/", (req, res) => {
   res.send("Hello World");
