@@ -26,7 +26,6 @@ const organizationBranchRoute = require("./routes/organizationBranch.js");
 const PORT = process.env.PORT;
 connectMongoDB();
 
-app.use(express.json());
 
 
 const corsOptions = {
@@ -36,8 +35,9 @@ const corsOptions = {
   allowedHeaders : ['Content-Type', 'Authorization']
 };
 
-
+app.options('*', cors(corsOptions)); // Add this line
 app.use(cors(corsOptions));
+app.use(express.json());
 app.use(
   "/api",
   userRoute,
