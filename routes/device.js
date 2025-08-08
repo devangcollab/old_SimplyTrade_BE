@@ -1,6 +1,6 @@
 const express =require('express')
 const {  findAllDevice, deleteDevice, updateDevice, findOneDevice, createDevice, softDeleteDevice, selectDeviceByModel, searchDevice} = require('../controllers/device')
-const { validateGetOneDeviceData, validateCreateDeviceData, validateUpdateDeviceData, validateDeleteDeviceData } = require('../middleware/Device')
+const { validateGetOneDeviceData, validateCreateDeviceData, validateUpdateDeviceData, validateDeleteDeviceData } = require('../middleware/device')
 const { AuthUser } = require('../middleware/user')
 const deviceRoute=express.Router()
 
